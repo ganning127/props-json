@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>JSON to Properties</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1><code>JSON</code> to Properties</h1>
+      <div>
+        <form onsubmit="jsonToProps(event)">
+          <div class="mb-3">
+            <label for="json-input" class="form-label input-label"
+              >JSON Input</label
+            >
+            <textarea
+              class="form-control"
+              id="json-input"
+              placeholder='{"key": "value"}'
+              rows="8"
+            ></textarea>
+
+            <div class="form-check form-switch">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="value-quotes"
+                checked
+              />
+              <label class="form-check-label" for="value-quotes"
+                >Value Quotations</label
+              >
+            </div>
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="key-quotes" />
+              <label class="form-check-label" for="key-quotes"
+                >Key Quotations</label
+              >
+            </div>
+
+            <button type="submit" class="btn btn-info mt-3">Convert</button>
+          </div>
+        </form>
+        <label for="exampleFormControlTextarea1" class="form-label"
+          >Props Output</label
+        >
+        <textarea
+          class="form-control"
+          id="props-output"
+          placeholder="Properties will be displayed here"
+          rows="8"
+          readonly
+        ></textarea>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.slim.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.7/js/tether.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/index.js"></script>
+  </body>
+</html>
