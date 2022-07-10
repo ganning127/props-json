@@ -51,6 +51,13 @@
         <label for="exampleFormControlTextarea1" class="form-label"
           >Props Output</label
         >
+        <button
+          class="btn btn-outline-info"
+          onclick="copyProps()"
+          id="copyProps"
+        >
+          Copy Props
+        </button>
         <textarea
           class="form-control"
           id="props-output"
@@ -59,6 +66,42 @@
           readonly
         ></textarea>
       </div>
+
+      <div class="sep"></div>
+      <h1>Properties to <code>JSON</code></h1>
+      <div>
+        <form onsubmit="propsToJson(event)">
+          <div class="mb-3">
+            <label for="json-input" class="form-label input-label"
+              >Properties Input</label
+            >
+            <textarea
+              class="form-control"
+              id="props-input"
+              placeholder='{"key": "value"}'
+              rows="8"
+            ></textarea>
+
+            <button type="submit" class="btn btn-info mt-3">Convert</button>
+          </div>
+        </form>
+
+        <label for="exampleFormControlTextarea1" class="form-label"
+          ><code>JSON</code> Output</label
+        >
+        <button class="btn btn-outline-info" onclick="copyJson()" id="copyJson">
+          Copy JSON
+        </button>
+
+        <textarea
+          class="form-control"
+          id="json-output"
+          placeholder="JSON will be displayed here"
+          rows="8"
+          readonly
+        ></textarea>
+      </div>
+      <div class="sep"></div>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.slim.js"></script>

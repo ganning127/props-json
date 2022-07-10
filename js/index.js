@@ -31,3 +31,56 @@ function jsonToProps(event) {
     document.getElementById("props-output").value = "Error parsing JSON";
   }
 }
+
+function propsToJson(event) {
+  event.preventDefault();
+  console.log("Converting props to JSON");
+  let props = document.getElementById("props-input").value;
+
+  try {
+    let propsLst = props.split("\n");
+
+    let propsObj = {};
+
+    for (let i = 0; i < propsLst.length; i++) {
+      let prop = propsLst[i].trim();
+      let key = prop.split("=")[0];
+      let value = prop.split("=")[1];
+
+      value = value.substring(1, value.length - 1);
+
+      propsObj[key] = value;
+    }
+
+    document.getElementById("json-output").value = JSON.stringify(
+      propsObj,
+      null,
+      2
+    );
+  } catch (e) {
+    console.log(e);
+    document.getElementById("json-output").value = "Error parsing props";
+  }
+}
+
+function copyJson() {
+  console.log("Copying JSON to clipboard");
+  let json = document.getElementById("json-output").value;
+  navigator.clipboard.writeText(json);
+  document.getElementById("copyJson").innerHTML = "Copied!";
+
+  setTimeout(function () {
+    document.getElementById("copyJson").innerHTML = "Copy";
+  }, 2000);
+}
+
+function copyProps() {
+  console.log("Copying props to clipboard");
+  let props = document.getElementById("props-output").value;
+  navigator.clipboard.writeText(props);
+  document.getElementById("copyProps").innerHTML = "Copied!";
+
+  setTimeout(function () {
+    document.getElementById("copyProps").innerHTML = "Copy";
+  }, 2000);
+}
